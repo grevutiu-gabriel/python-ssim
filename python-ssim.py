@@ -7,8 +7,12 @@ Modified by Christopher Godfrey, on 17 July 2012 (lines 32-34)
 
 import numpy
 import scipy.ndimage
+from scipy.ndimage import imread
 from numpy.ma.core import exp
 from scipy.constants.constants import pi
+
+img_mat_1=imread('../mountain/5474.jpg', flatten=True)
+img_mat_2=imread('../mountain/1.jpg', flatten=True)
 
 
 '''
@@ -80,6 +84,9 @@ def compute_ssim(img_mat_1, img_mat_2):
     ssim_map=num_ssim/den_ssim
     index=numpy.average(ssim_map)
 
+    print index
+
     return index
 
     
+compute_ssim(img_mat_1, img_mat_2)
